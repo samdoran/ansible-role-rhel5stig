@@ -21,4 +21,3 @@
 - include: not_automated.yml
   tags:
     - not_auto_fixed
-
