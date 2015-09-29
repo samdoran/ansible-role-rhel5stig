@@ -5,7 +5,7 @@ Configure RHEL 5 machine to be DISA STIG compliant. CAT I findings will be corre
 
 This role **will make changes to the system** that could break things. This is not an auditing tool but rather a remediation tool to be used after an audit has been conducted.
 
-The role tries to be helpful and pause to let you know it found something. You can disable this behaviour if you want to run it unattended by setting `rhel5stig_fullauto` to `true`.
+The role tries to be helpful and pause to let you know it found something. You can disable this behaviour if you want to run it unattended by setting `rhel5stig_fullauto` to `True`.
 
 ## IMPORTANT INSTALL STEP
 
@@ -23,33 +23,22 @@ You should carefully read through the tasks to make sure these changes will not 
 
 Role Variables
 --------------
-There are many role variables defined in defaults/main.yml. This list shows the most important.
+There are many role variables defined in `defaults/main.yml`. This list shows the most important.
 
-**rhel5stig_cat1**:           Correct CAT I findings (Default: true)
-
-**rhel5stig_cat2**:           Correct CAT II findings (Default: false)
-
-**rhel5stig_cat3**:           Correct CAT III findings (Default: false)
-
-**rhel5stig_fullauto**:       Run the role without pausing (Default: true)
-
-**rhel5stig_use_dhcp**:       Whether the system should use DHCP or Static IPs. **Setting this false is dangerous.** (Default: true)
-
-**rhel5stig_system_is_router** Whether on not the target system is acting as a router. Disables settings that would break the system if it is a acting as a router. (Default: false)
-
-**rhel5stig_root_email_address**:          Address where system email is sent (Default: foo@baz.com)
-
-**rhel5stig_xwindows_required**:           Whether or not X Windows is is use on taregt systems. Disables some changes if X Windows is not in use. (Default: false)
-
-**rhel5stig_ipv6_in_use**       Whether or not ipv6 is in use of the target system. This is set automatically to 'true' if ipv6 is found to be in use. (Default: false)
-
-**rhel5stig_tftp_required**  Whether or not TFTP is required. This will prevent the removal of `tftp` and `tftp-server` packages. It will also  reconfigure the `tftp-server` to run securely. (Default: false)
-Dependencies
-
-**rhel5stig_change_grub_password**: Whether or not to update the grub password even if a hash already exists in `/boot/grub/grub.conf`. (Default: false)
-
-**rhel5stig_bootloader_password**: The new grub password to use if rhel6stig_change_grub_password is **TRUE** (Default: randomly generated and encrypted string)
-
+| Name                              | Default Value         | Description          |
+|-----------------------------------|-----------------------|----------------------|
+| `rhel5stig_cat1`                  | `True`                | Correct CAT I findings |
+| `rhel5stig_cat2`                  | `False`               | Correct CAT II findings |
+| `rhel5stig_cat3`                  | `False`               | Correct CAT III findings |
+| `rhel5stig_fullauto`              | `True`                | Run the role without pausing |
+| `rhel5stig_use_dhcp`              | `True`                | Whether the system should use DHCP or Static IPs. **Setting this to False is dangerous.** |
+| `rhel5stig_system_is_router`      | `False`               | Whether on not the target system is acting as a router. Disables settings that would break the system if it is a acting as a router. |
+| `rhel5stig_root_email_address`    | `foo@baz.com`         | Address where system email is sent |
+| `rhel5stig_xwindows_required`     | `False`               | Whether or not X Windows is is use on taregt systems. Disables some changes if X Windows is not in use. |
+| `rhel5stig_ipv6_in_use`           | `False`               | Whether or not ipv6 is in use of the target system. This is set automatically to `True` if ipv6 is found to be in use. |
+| `rhel5stig_tftp_required`         | `False`               | Whether or not TFTP is required. This will prevent the removal of `tftp` and `tftp-server` packages. It will also  reconfigure the `tftp-server` to run securely. |
+| `rhel5stig_change_grub_password`  | `False`               | Whether or not to update the Grub password even if a hash already exists in `/boot/grub/grub.conf`. |
+| `rhel5stig_bootloader_password`   | `[random data]`       | The new Grub password to use if `rhel6stig_change_grub_password` is `True` |
 
 Dependencies
 ------------
