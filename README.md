@@ -65,7 +65,7 @@ Make sure to include the vars_prompt section in your playbook. It is needed for 
       sudo: yes
 
       roles:
-         - { role: RHEL5-STIG, rhel5stig_cat1: true, rhel5stig_cat2: true, rhel5stig_cat3: false }
+         - { role: RHEL5-STIG, rhel5stig_cat1: True, rhel5stig_cat2: True, rhel5stig_cat3: False }
 
 
 Tags
@@ -85,8 +85,3 @@ License
 -------
 
 MIT
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

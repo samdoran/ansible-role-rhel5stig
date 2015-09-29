@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  author: your name
+  author: Sam Doran
   description: "Ansible role to apply RHEL 5 STIG"
-  company: your company (optional)
+  company:
   license: MIT
   min_ansible_version: 1.8
   platforms:
@@ -17,3 +17,4 @@ galaxy_info:
     - security
 
 dependencies: []
+version: 0.1
