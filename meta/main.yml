@@ -4,7 +4,8 @@ galaxy_info:
   description: "Ansible role to apply RHEL 5 STIG"
   company:
   license: MIT
-  min_ansible_version: 1.8
+  min_ansible_version: 1.9
+
   platforms:
   - name: EL
     versions:
@@ -12,9 +13,10 @@ galaxy_info:
   - name: CentOS
     versions:
       - 5
-  categories:
+
+  galaxy_tags:
     - system
     - security
+    - stig
 
 dependencies: []
-version: 0.1
